@@ -34,7 +34,7 @@ module.exports = function (domains, graphQLSchema) {
                 typeDict = graphQLSchema.getSubscriptionType();
                 break;
             default:
-                graphQLSchema.getMutationType();
+                typeDict = graphQLSchema.getMutationType();
                 break;
         }
 
