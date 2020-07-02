@@ -19,7 +19,9 @@ See a demo of DociQL in action here: [https://wayfair.github.io/dociql/](https:/
 
 ## Bitnissen's additions
 
-This fork adds support for Subscriptions. The support is currently a very crude hack, so it ought to be improved ;-)
+This fork adds:
+- Support for Subscriptions. The support is currently a very crude hack, so it ought to be improved ;-)
+- Uses punycode-lib for htmlId's (hashbangs). This ensures "🎟 bingo" and "💥 bingo" results in different element IDs.
 
 ---
 
