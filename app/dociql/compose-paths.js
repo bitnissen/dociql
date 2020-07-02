@@ -24,9 +24,19 @@ module.exports = function (domains, graphQLSchema) {
         const queryTokens = usecase.query.split(".");
         if (queryTokens.length < 2)
             throw new TypeError(`Domain: ${tag}. Usecase query '${usecase.query}' is not well formed.\nExpected 'query.<fieldName>' or 'mutation.<mutationName>'`)
-        const typeDict = queryTokens[0] == "query" ?
-            graphQLSchema.getQueryType() :
-            graphQLSchema.getMutationType()
+        let typeDict;
+        
+        switch(queryTokens[0]) {
+            case "query":
+                typeDict = graphQLSchema.getQueryType();
+                break;
+            case "subscription":
+                typeDict = graphQLSchema.getSubscriptionType();
+                break;
+            default:
+                graphQLSchema.getMutationType();
+                break;
+        }
 
         var target = typeDict;
         queryTokens.forEach((token, i) => {
