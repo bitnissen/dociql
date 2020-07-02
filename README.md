@@ -17,6 +17,12 @@ See a demo of DociQL in action here: [https://wayfair.github.io/dociql/](https:/
 
 ---
 
+## Bitnissen's additions
+
+This fork adds support for Subscriptions. The support is currently a very crude hack, so it ought to be improved ;-)
+
+---
+
 ![Demo Screenshot](screenshot.png)
 
 ---
